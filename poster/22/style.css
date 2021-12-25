@@ -1,0 +1,64 @@
+:root {
+    --black: #000;
+    --grey: #7D808A;
+    --white: #fff;
+    /* --clr1: #02735E;
+    --clr2: #03A678;
+    --clr3: #A61C1C;
+    --clr4: #77B3D9;
+    --clr5: #508BBF;     */
+    --clr1: #F29F05;
+    --clr2: #73BFAA;
+    --clr3: #6BB3F2;
+    --clr4: #5B92D9;
+    --clr5: #A60530;
+}
+
+*,
+*::after,
+*::before,
+html,
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--grey);
+    display: grid;
+    height: 100vh;
+    place-items: center;
+}
+
+#poster {
+    background-color: var(--white);
+    border: 2vmin solid var(--black);
+    box-shadow: 0 4vmin 8vmin -4vmin;
+    box-sizing: content-box;
+    height: 80vmin;
+    padding: 4vmin;
+    width: 50vmin;
+}
+
+#canvas {
+    background: var(--black);
+    display: grid;
+    /* grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(10, 1fr); */
+    height: 80vmin;
+    overflow: hidden;
+    position: relative;
+    /* place-items: center; */
+    width: 50vmin;
+}
+
+#canvas span {
+    background-color: var(--black);
+    border-radius: 0;
+    height: 15vmin;
+    position: absolute;
+    transition: .2s linear;
+    /* filter: blur(24px); */
+    width: 15vmin;
+}
