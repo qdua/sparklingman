@@ -1,0 +1,81 @@
+:root {
+    --black: #000;
+    --blue: #2d16af;
+    --grey: #7D808A;
+    --purple: #8d3a8d;
+    --orange: #da7415;
+    --yellow: #e2c832;
+    --white: #fff;
+}
+
+*,
+*::after,
+*::before,
+html,
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--grey);
+    display: grid;
+    height: 100vh;
+    place-items: center;
+}
+
+#poster {
+    background-color: var(--white);
+    border: 2vmin solid var(--black);
+    box-shadow: 0 4vmin 8vmin -4vmin;
+    box-sizing: content-box;
+    display: grid;
+    height: 80vmin;
+    padding: 4vmin;
+    place-items: center;
+    width: 50vmin;
+}
+
+#canvas {
+    background: var(--black);
+    display: grid;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 80vmin;
+    overflow: hidden;
+    position: relative;
+    place-items: center;
+    width: 50vmin;
+}
+
+#canvas s {
+    background: var(--yellow);
+    height: 20vmin;
+    text-decoration: none;
+    transform: scale(1.2);
+    width: 20vmin;
+}
+
+#canvas s:nth-child(1) {
+    background: repeating-linear-gradient(45deg, var(--orange) 5%, var(--orange) 8%, transparent 5%, transparent 13%);
+    border-radius: 100%;
+}
+
+#canvas s:nth-child(2) {
+    background: repeating-linear-gradient(90deg, var(--purple) 5%, var(--purple) 8%, transparent 5%, transparent 13%);
+}
+
+#canvas s:nth-child(3) {
+    border-radius: 100%;
+}
+
+#canvas s:nth-child(4) {
+    background: repeating-linear-gradient(0deg, var(--blue) 5%, var(--blue) 8%, transparent 5%, transparent 13%);
+    border-radius: 100%;
+}
+
+#canvas s:nth-child(5) {
+    background: repeating-linear-gradient(45deg, var(--purple) 5%, var(--purple) 8%, transparent 5%, transparent 13%);
+    border-radius: 100%;
+}
