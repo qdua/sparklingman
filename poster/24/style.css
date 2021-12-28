@@ -5,7 +5,7 @@
     --clr1: #F29F05;
     --clr2: #73BFAA;
     --clr3: #6BB3F2;
-    --clr4: #800080;
+    --clr4: #5B92D9;
     --clr5: #A60530;
 }
 
@@ -41,6 +41,8 @@ body {
 #canvas {
     background: var(--black);
     display: grid;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     height: 80vmin;
     overflow: hidden;
     position: relative;
@@ -48,24 +50,10 @@ body {
     width: 50vmin;
 }
 
-#canvas span {
-    align-items: center;
-    background: var(--black);
-    box-shadow: 0 0 15vmin var(--black);
-    border-radius: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    height: 0vmin;
-    overflow: hidden;
-    position: absolute;
-    text-decoration: none;
-    transition: .2s linear;
-    width: 0vmin;
-}
-
 #canvas s {
-    height: 200%;
-    transition: .2s linear;
-    width: 2.5vmin;
+    background: var(--yellow);
+    height: 20vmin;
+    text-decoration: none;
+    transform: scale(1.2);
+    width: 20vmin;
 }
