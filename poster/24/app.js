@@ -17,16 +17,29 @@ function colors() {
 }
 
 for (let i = 0; i < box; i++) {
-    let s = document.createElement('s')
-    canvas.prepend(s)
+    let span = document.createElement('span')
+    canvas.prepend(span)
+
+    for (let j = 0; j < i; j++) {
+        let s = document.createElement('s')
+        span.prepend(s)
+    }
+}
+for (let q = 0; q < 10; q++) {
+    let s = document.querySelectorAll('s')[q]
+    s.style.height += [q] + "vmin"
+    s.style.width += [q] + "vmin"
 }
 
+
 function randomFull() {
-    for (let i = 0; i < box; i++) {
-        let s = document.querySelectorAll('s')[i]
+    for (let d = 0; d < document.querySelectorAll('s').length; d++) {
+        let s = document.querySelectorAll('s')[d]
         s.style.backgroundColor = colors()
     }
 }
+
+// console.log(document.querySelectorAll('s').length);
 
 
 poster.onclick = randomFull;

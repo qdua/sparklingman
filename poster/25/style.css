@@ -1,0 +1,119 @@
+:root {
+    --black: #000;
+    --grey: #7D808A;
+    --white: #fff;
+    --clr1: #b8eafd;
+    --clr2: #86dae6;
+    --clr3: #6BB3F2;
+    --clr4: #3c8ad3;
+    --clr5: #004d91;
+    --clr6: #003380;
+    --clr7: #034a4d;
+}
+
+*,
+*::after,
+*::before,
+html,
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--grey);
+    display: grid;
+    height: 100vh;
+    place-items: center;
+}
+
+#poster {
+    background-color: var(--white);
+    border: 2vmin solid var(--black);
+    box-shadow: 0 4vmin 8vmin -4vmin;
+    box-sizing: content-box;
+    display: grid;
+    height: 80vmin;
+    padding: 4vmin;
+    place-items: center;
+    width: 50vmin;
+}
+
+#canvas {
+    align-items: flex-end;
+    background: radial-gradient(circle at 50% 100%, var(--clr2), var(--clr6));
+    display: flex;
+    height: 80vmin;
+    overflow: hidden;
+    justify-content: center;
+    position: relative;
+    width: 50vmin;
+}
+
+#land {
+    background: radial-gradient(circle at 50% -100%, var(--clr3), var(--clr6));
+    bottom: 0;
+    height: 24vmin;
+    position: absolute;
+    width: 100%;
+}
+
+#canvas span {
+    background: var(--clr5);
+    border-radius: 2vmin;
+    height: 30vmin;
+    position: absolute;
+    transform: rotate(45deg);
+    width: 30vmin;
+}
+
+#canvas span:nth-child(1) {
+    bottom: 15vmin;
+    right: -5vmin;
+}
+
+#canvas span:nth-child(2) {
+    background: var(--clr6);
+    left: -10vmin;
+    /* transform: rotate(45deg) translate(-15vmin, 10vmin); */
+}
+
+#canvas span:nth-child(3) {
+    background: var(--clr6);
+    bottom: 5vmin;
+    left: 2vmin;
+}
+
+#canvas span:nth-child(4) {
+    background: var(--clr3);
+    bottom: 2vmin;
+    right: -12vmin;
+}
+
+#canvas span:nth-child(5) {
+    background: var(--clr4);
+    bottom: 1vmin;
+    right: 0vmin;
+}
+
+#canvas span:nth-child(6) {
+    background: var(--clr4);
+    bottom: -5vmin;
+    right: 10vmin;
+}
+
+#star {
+    display: grid;
+    height: 100%;
+    position: absolute;
+    place-items: center;
+    width: 100%;
+}
+
+#star * {
+    background-color: var(--clr3);
+    border-radius: 100%;
+    position: absolute;
+    transform: rotate(45deg);
+}
