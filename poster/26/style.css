@@ -1,0 +1,70 @@
+:root {
+    --black: #000;
+    --grey: #7D808A;
+    --white: #fff;
+    --clr1: #2fb982;
+    --clr2: #2b883e;
+    --clr3: #229940;
+    --clr4: #038C4C;
+    --clr5: #025930;
+}
+
+*,
+*::after,
+*::before,
+html,
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--grey);
+    display: grid;
+    height: 100vh;
+    place-items: center;
+}
+
+#poster {
+    background-color: var(--white);
+    border: 2vmin solid var(--black);
+    box-shadow: 0 4vmin 8vmin -4vmin;
+    box-sizing: content-box;
+    display: grid;
+    height: 80vmin;
+    padding: 4vmin;
+    place-items: center;
+    width: 50vmin;
+}
+
+#canvas {
+    align-items: flex-start;
+    background: var(--black);
+    display: flex;
+    gap: .3vmin;
+    height: 80vmin;
+    overflow: hidden;
+    justify-content: center;
+    position: relative;
+    width: 50vmin;
+}
+
+#canvas::before {
+    bottom: 4.8vmin;
+    color: var(--clr4);
+    content: 'The Matrix Resurrections';
+    font: normal 1.25vmin/1 monospace;
+    position: absolute;
+    pointer-events: none;
+}
+
+#canvas span {
+    background: var(--clr5);
+    border-radius: 0 0 100% 100%;
+    height: 10%;
+    opacity: .75;
+    position: absolute;
+    transition: .2s linear;
+    width: .4vmin;
+}
