@@ -8,7 +8,6 @@
     --clr4: #3c8ad3;
     --clr5: #004d91;
     --clr6: #003380;
-    --clr7: #034a4d;
 }
 
 *,
@@ -76,7 +75,6 @@ body {
 #canvas span:nth-child(2) {
     background: var(--clr6);
     left: -10vmin;
-    /* transform: rotate(45deg) translate(-15vmin, 10vmin); */
 }
 
 #canvas span:nth-child(3) {
@@ -103,17 +101,32 @@ body {
     right: 10vmin;
 }
 
-#star {
-    display: grid;
-    height: 100%;
+#snow {
+    height: 120%;
     position: absolute;
-    place-items: center;
-    width: 100%;
+    right: -10%;
+    top: -10%;
+    width: 120%;
 }
 
-#star * {
+#snow s {
     background-color: var(--clr3);
-    border-radius: 100%;
+    border-radius: 100% !important;
     position: absolute;
-    transform: rotate(45deg);
+    top: 0;
+    transition: .1s linear;
+    transform: rotate(45deg) translate(0);
+}
+
+#snow .s {
+    animation: fall 15s linear forwards;
+}
+
+@keyframes fall {
+    0% {
+        transform: rotate(45deg) translate(0);
+    }
+    100% {
+        transform: rotate(45deg) translate(0, 150vh);
+    }
 }

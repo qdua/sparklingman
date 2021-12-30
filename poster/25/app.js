@@ -1,4 +1,4 @@
-let body, box, canvas, land, poster, random
+let body, box, canvas, land, poster, random, snow
 body = document.body
 poster = document.createElement('div')
 poster.setAttribute('id', 'poster')
@@ -9,9 +9,9 @@ poster.prepend(canvas)
 land = document.createElement('div')
 land.setAttribute('id', 'land')
 canvas.append(land)
-star = document.createElement('div')
-star.setAttribute('id', 'star')
-canvas.append(star)
+snow = document.createElement('div')
+snow.setAttribute('id', 'snow')
+canvas.append(snow)
 box = 6
 random = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -21,19 +21,28 @@ function colors() {
     return getComputedStyle(document.documentElement).getPropertyValue('--clr' + random(1, 5) + '')
 }
 for (let i = 0; i < box; i++) {
-    let span = document.createElement('span')
-    canvas.prepend(span)
+    let mountain = document.createElement('span')
+    mountain.style.borderRadius = random(1, 5) + "vmin"
+    canvas.prepend(mountain)
 }
-for (let j = 0; j < Math.round(innerHeight / Math.PI); j++) {
-    let size = Math.random() / 2;
-    let x = Math.round(Math.random() * 100);
-    let y = Math.round(Math.random() * 100);
-    let s = document.createElement("s");
-    s.style.width = size / 2 + "vmin";
-    s.style.height = size * 1.5 + "vmin";
-    s.style.left = x + "%";
-    s.style.top = y + "%";
-    star.prepend(s);
+
+
+function createSnow() {
+    for (let j = 0; j < 20; j++) {
+        let size = Math.random() / 2;
+        let s = document.createElement("s");
+        s.style.width = size + "vmin";
+        s.style.height = size + "vmin";
+        s.style.left = random(0, 200) + "%";
+        s.classList.add("s");
+        s.style.animationDuration = Math.random() * 3 + 10 + "s";
+        s.style.opacity = Math.random();
+        snow.prepend(s);
+
+        setTimeout(() => {
+            s.remove();
+        }, 15000)
+    }
 }
 
 function randomFull() {
@@ -43,7 +52,8 @@ function randomFull() {
     }
 }
 
-
-poster.onclick = randomFull;
-// setInterval(randomFull, 1000);
-window.requestAnimationFrame(randomFull);
+poster.onclick = randomFull
+setInterval(createSnow, 1000)
+    // setInterval(randomFull, 1000);
+window.requestAnimationFrame(randomFull)
+window.requestAnimationFrame(createSnow)
