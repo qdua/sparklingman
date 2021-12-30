@@ -3,9 +3,9 @@
     --grey: #7D808A;
     --white: #fff;
     --clr1: #b8eafd;
-    --clr2: #86dae6;
-    --clr3: #6BB3F2;
-    --clr4: #3c8ad3;
+    --clr2: #6BB3F2;
+    --clr3: #3c8ad3;
+    --clr4: #42b3ff;
     --clr5: #004d91;
     --clr6: #003380;
 }
@@ -41,7 +41,7 @@ body {
 
 #canvas {
     align-items: flex-end;
-    background: radial-gradient(circle at 50% 100%, var(--clr2), var(--clr6));
+    background: radial-gradient(circle at 50% 75%, var(--clr4), var(--clr6));
     display: flex;
     height: 80vmin;
     overflow: hidden;
@@ -51,7 +51,7 @@ body {
 }
 
 #land {
-    background: radial-gradient(circle at 50% 0%, var(--clr3), var(--clr6));
+    background: radial-gradient(circle at 50% -25%, var(--clr4), var(--clr6));
     bottom: 0;
     height: 24vmin;
     position: absolute;
