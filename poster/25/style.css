@@ -51,53 +51,50 @@ body {
 }
 
 #land {
-    background: radial-gradient(circle at 50% -100%, var(--clr3), var(--clr6));
+    background: radial-gradient(circle at 50% 0%, var(--clr3), var(--clr6));
     bottom: 0;
     height: 24vmin;
     position: absolute;
     width: 100%;
 }
 
-#canvas span {
+#canvas div span {
     background: var(--clr5);
     border-radius: 2vmin;
     height: 30vmin;
     position: absolute;
     transform: rotate(45deg);
+    transition: .3s linear;
     width: 30vmin;
 }
 
-#canvas span:nth-child(1) {
-    bottom: 15vmin;
-    right: -5vmin;
+#canvas div span:nth-child(1) {
+    bottom: -10vmin;
+    right: -8vmin;
 }
 
-#canvas span:nth-child(2) {
-    background: var(--clr6);
+#canvas div span:nth-child(2) {
     left: -10vmin;
+    bottom: -24vmin;
 }
 
-#canvas span:nth-child(3) {
-    background: var(--clr6);
-    bottom: 5vmin;
+#canvas div span:nth-child(3) {
+    bottom: -19vmin;
     left: 2vmin;
 }
 
-#canvas span:nth-child(4) {
-    background: var(--clr3);
-    bottom: 2vmin;
+#canvas div span:nth-child(4) {
+    bottom: -22vmin;
     right: -12vmin;
 }
 
-#canvas span:nth-child(5) {
-    background: var(--clr4);
-    bottom: 1vmin;
+#canvas div span:nth-child(5) {
+    bottom: -24vmin;
     right: 0vmin;
 }
 
-#canvas span:nth-child(6) {
-    background: var(--clr4);
-    bottom: -5vmin;
+#canvas div span:nth-child(6) {
+    bottom: -29vmin;
     right: 10vmin;
 }
 
@@ -110,7 +107,7 @@ body {
 }
 
 #snow s {
-    background-color: var(--clr3);
+    background-color: var(--white);
     border-radius: 100% !important;
     position: absolute;
     top: 0;
@@ -119,14 +116,35 @@ body {
 }
 
 #snow .s {
-    animation: fall 15s linear forwards;
+    animation: fall linear forwards;
 }
 
 @keyframes fall {
-    0% {
-        transform: rotate(45deg) translate(0);
-    }
     100% {
         transform: rotate(45deg) translate(0, 150vh);
     }
+}
+
+#mountain {
+    bottom: 24vmin;
+    align-items: start;
+    display: flex;
+    height: 60vmin;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+}
+
+#mountainClone {
+    bottom: -33vmin;
+    align-items: flex-end;
+    display: flex;
+    height: 60vmin;
+    overflow: hidden;
+    opacity: 0.3;
+    position: absolute;
+    transform: scale(1, -.9);
+    width: 100%;
+    z-index: 1;
 }
