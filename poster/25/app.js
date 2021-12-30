@@ -17,11 +17,8 @@ snow.setAttribute('id', 'snow')
 canvas.append(snow)
 box = 6
 
-
-
-
 random = (min, max) => {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+    return Math.floor(Math.random() * (max - min + 1)) + min
 }
 
 function colors() {
@@ -32,21 +29,19 @@ for (let i = 0; i < box; i++) {
     mountain.prepend(span)
 }
 
-
 function createSnow() {
-    for (let j = 0; j < 20; j++) {
-        let size = Math.random() / 2;
-        let s = document.createElement("s");
-        s.style.width = size + "vmin";
-        s.style.height = size + "vmin";
-        s.style.left = random(0, 160) + "vmin";
-        s.classList.add("s");
-        s.style.animationDuration = Math.random() * 5 + 10 + "s";
-        s.style.opacity = Math.random();
-        snow.prepend(s);
+    for (let j = 0; j < 30; j++) {
+        let size = Math.random() / 2
+        let s = document.createElement("s")
+        s.style.width = size + "vmin"
+        s.style.height = size + "vmin"
+        s.style.left = random(0, 160) + "vmin"
+        s.style.animationDuration = random(10, 15) + "s"
+        s.style.opacity = Math.random()
+        snow.prepend(s)
 
         setTimeout(() => {
-            s.remove();
+            s.remove()
         }, 15000)
     }
 }

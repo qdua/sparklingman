@@ -60,7 +60,7 @@ body {
 
 #canvas div span {
     background: var(--clr5);
-    border-radius: 2vmin;
+    border-radius: 2.4vmin;
     height: 30vmin;
     position: absolute;
     transform: rotate(45deg);
@@ -104,19 +104,18 @@ body {
     right: -10%;
     top: -10%;
     width: 120%;
+    z-index: 100;
 }
 
 #snow s {
+    animation: fall linear forwards;
     background-color: var(--white);
     border-radius: 100% !important;
     position: absolute;
+    text-decoration: none;
     top: 0;
     transition: .1s linear;
     transform: rotate(45deg) translate(0);
-}
-
-#snow .s {
-    animation: fall linear forwards;
 }
 
 @keyframes fall {
@@ -141,8 +140,9 @@ body {
     align-items: flex-end;
     display: flex;
     height: 60vmin;
+    mix-blend-mode: multiply;
     overflow: hidden;
-    opacity: 0.3;
+    opacity: .5;
     position: absolute;
     transform: scale(1, -.9);
     width: 100%;
