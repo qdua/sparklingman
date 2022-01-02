@@ -2,11 +2,12 @@
     --black: #000;
     --grey: #7D808A;
     --white: #fff;
-    --clr1: #F29F05;
-    --clr2: #73BFAA;
-    --clr3: #6BB3F2;
-    --clr4: #800080;
-    --clr5: #A60530;
+    --clr1: #b8eafd;
+    --clr2: #6BB3F2;
+    --clr3: #3c8ad3;
+    --clr4: #42b3ff;
+    --clr5: #004d91;
+    --clr6: #003380;
 }
 
 *,
@@ -40,31 +41,15 @@ body {
 
 #canvas {
     background: var(--black);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
     height: 80vmin;
     overflow: hidden;
     position: relative;
-    place-items: center;
     width: 50vmin;
 }
 
-#canvas span {
-    background: var(--black);
-    display: grid;
-    height: 20vmin;
-    overflow: hidden;
-    place-items: center;
-    position: relative;
-    transition: .2s linear;
-    width: 20vmin;
-}
-
-#canvas s {
-    height: 0vmin;
-    /* position: absolute; */
-    transition: .2s linear;
-    transform: translateX(-50%);
-    width: 0vmin;
+#canvas * {
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: .3s linear;
 }

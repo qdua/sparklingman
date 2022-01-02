@@ -55,5 +55,5 @@ function randomFull() {
     late();
 }
 poster.onclick = randomFull;
-setInterval(randomFull, 1000);
+// setInterval(randomFull, 1000);
 window.requestAnimationFrame(randomFull);
