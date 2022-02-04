@@ -1,0 +1,109 @@
+:root {
+    --black: #000;
+    --grey: #7D808A;
+    --white: #fff;
+    --clr1: #f4e31c;
+    --clr2: #eaf0fe;
+    --clr3: #f4bdda;
+    --clr33: #f4bdda00;
+    --clr4: #e7d4f5;
+    --clr5: #d5d4f5;
+    --clr6: #493e6c;
+    --clr66: #493e6c00;
+}
+
+*,
+*::after,
+*::before,
+html,
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-color: var(--clr2);
+}
+
+body {
+    background: radial-gradient(circle at 30% 100%, var(--clr3), var(--clr33) 35%), radial-gradient(circle at 130% 33%, var(--clr6), var(--clr33) 45%), radial-gradient(circle at -20% 0%, var(--clr5), var(--clr33));
+    display: grid;
+    font: normal 2vmin/1.3 sans-serif;
+    height: 100vh;
+    place-items: center;
+}
+
+#app {
+    background: radial-gradient(circle at 0% 50%, var(--clr2), var(--clr33) 40%), radial-gradient(circle at 100% 0%, var(--clr2), var(--clr33) 35%), radial-gradient(circle at -20% -20%, var(--clr3), var(--clr33) 35%), radial-gradient(circle at -20% 0%, var(--clr5), var(--clr33) 45%), radial-gradient(circle at 250% -50%, var(--clr6), var(--clr66));
+    border-radius: 2vmin;
+    box-shadow: 0 4vmin 16vmin -4vmin var(--clr6);
+    height: 80vmin;
+    position: relative;
+    width: 40vmin;
+}
+
+nav {
+    left: 2vmin;
+    position: absolute;
+    top: 2vmin;
+}
+
+nav button {
+    align-items: start;
+    background-color: transparent !important;
+    border: none !important;
+    cursor: pointer;
+    display: grid;
+    height: 48px;
+    padding: 0;
+    width: 48px;
+}
+
+nav button i {
+    background-color: var(--clr6);
+    border-radius: .2vmin;
+    height: 4px;
+    position: relative;
+    transform: translateX(-5px);
+    width: 20px;
+}
+
+nav button i::after {
+    background-color: var(--clr6);
+    border-radius: .2vmin;
+    content: '';
+    height: 4px;
+    left: 0;
+    position: absolute;
+    top: -1.4vmin;
+    width: 30px;
+}
+
+nav button i::before {
+    background-color: var(--clr6);
+    border-radius: .2vmin;
+    content: '';
+    height: 4px;
+    left: 0;
+    position: absolute;
+    top: 1.4vmin;
+    width: 30px;
+}
+
+button.bell {
+    background-color: var(--clr6);
+    border: none;
+    border-radius: 50% 50% 0 0;
+    height: auto;
+    position: absolute;
+    right: 2vmin;
+    top: 2vmin;
+}
+
+h1 {
+    color: var(--clr6);
+    font-size: 1.5rem;
+    margin: 8vmin 2vmin 2vmin;
+    padding: 0;
+}

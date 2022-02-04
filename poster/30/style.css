@@ -1,0 +1,59 @@
+:root {
+    --black: #000;
+    --grey: #7D808A;
+    --white: #fff;
+    --clr1: #F29F05;
+    --clr2: #73BFAA;
+    --clr3: #6BB3F2;
+    --clr4: #800080;
+    --clr5: #A60530;
+}
+
+*,
+*::after,
+*::before,
+html,
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--grey);
+    display: grid;
+    height: 100vh;
+    place-items: center;
+}
+
+#poster {
+    background-color: var(--white);
+    border: 2vmin solid var(--black);
+    box-shadow: 0 4vmin 8vmin -4vmin;
+    box-sizing: content-box;
+    display: grid;
+    height: 80vmin;
+    padding: 4vmin;
+    place-items: center;
+    width: 50vmin;
+}
+
+#canvas {
+    background: var(--black);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    gap: 1vmin;
+    height: 80vmin;
+    overflow: hidden;
+    padding: 4vmin 4vmin 8vmin;
+    position: relative;
+    width: 50vmin;
+}
+
+#canvas span {
+    background-color: var(--clr3);
+    box-shadow: 0 0 2vmin -1.5vmin var(--white) inset, -1vmin 1vmin 2vmin -1.3vmin var(--white) inset, 2vmin -1vmin 2vmin -2vmin var(--black) inset, 2vmin -2vmin 4vmin -1vmin var(--clr4) inset, 0 0 4vmin -2vmin var(--clr2) inset, 0 -2vmin 5vmin 1vmin var(--clr1) inset, 2vmin 2vmin 4vmin -2vmin var(--clr5) inset, 0 1vmin 2vmin -.5vmin var(--clr5), -1vmin 1vmin 5vmin -1.5vmin var(--clr4);
+    border-radius: 100%;
+    transition: 1s linear;
+}

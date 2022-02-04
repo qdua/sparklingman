@@ -1,0 +1,134 @@
+:root {
+    --green: #00ff78;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+}
+
+html,
+body {
+    background-color: black;
+    color: blue;
+    font-size: 50px;
+    font-family: "Ubuntu Mono", monospace;
+}
+
+body {
+    margin: 25%;
+    position: relative;
+}
+
+.design {
+    cursor: pointer;
+    height: 50px;
+    left: 0;
+    line-height: 50px;
+    position: absolute;
+    top: 0;
+    z-index: 0;
+}
+
+svg {
+    margin: 0 3px;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    opacity: 1;
+    transition: 0.05s ease;
+}
+
+svg:hover * {
+    display: none;
+    transition: 0.05s ease;
+}
+
+svg:nth-child(2) {
+    margin: 0;
+}
+
+svg:nth-child(5) {
+    margin: 0 5px 0 4px;
+}
+
+#d {
+    animation: d 0.8s 0.2s both;
+    margin: 0;
+}
+
+@keyframes d {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#e {
+    animation: e 0.8s 0.4s both;
+    margin: 0;
+}
+
+@keyframes e {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#s {
+    animation: s 0.8s 0.6s both;
+}
+
+@keyframes s {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#i {
+    animation: i 0.8s 0.8s both;
+}
+
+@keyframes i {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#g {
+    animation: g 0.8s 1s both;
+}
+
+@keyframes g {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#n {
+    animation: n 0.8s 1.2s both;
+}
+
+@keyframes n {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

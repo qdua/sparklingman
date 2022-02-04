@@ -22,13 +22,12 @@ window.setInterval(function() {
     }, 32360)
 }, 2000)
 
+
+
 window.setInterval(function() {
     let span = document.createElement('span')
     sun.prepend(span)
     window.setInterval(() => {
         span.remove()
     }, 16180)
-
-    let spanL = document.querySelectorAll('#canvas span').length
-    console.log(spanL);
 }, 1000)

@@ -28,6 +28,7 @@ body {
     border: 2vmin solid var(--black);
     box-shadow: 0 4vmin 8vmin -4vmin;
     box-sizing: content-box;
+    border-radius: 100%;
     display: grid;
     height: 80vmin;
     padding: 4vmin;
@@ -38,6 +39,7 @@ body {
 #canvas {
     align-items: end;
     background: var(--black);
+    border-radius: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: 80vmin;
