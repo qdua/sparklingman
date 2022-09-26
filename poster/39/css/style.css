@@ -1,0 +1,113 @@
+:root {
+	--black: #000;
+	--dark: #121212;
+	--white: #fff;
+	--grey: #7d808a;
+	--yellow-darkest: #947e00;
+	--yellow-darker: #b89c00;
+	--yellow-dark: #dbba00;
+	--yellow: #ffd900;
+	--yellow-light: #ffde24;
+	--yellow-lighter: #ffe347;
+	--yellow-lightest: #ffe96b;
+	--yellow-lightest-50: #ffe96b50;
+	--blue-darkest: #00244d;
+	--blue-darker: #003571;
+	--blue-dark: #004594;
+	--blue: #0056b8;
+	--blue-light: #0067dc;
+	--blue-lighter: #0177ff;
+	--blue-lightest: #248aff;
+	--blue-lightest-50: #248aff50;
+}
+*,
+html,
+body {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+body {
+	background-color: var(--grey);
+	display: grid;
+	height: 100vh;
+	place-items: center;
+}
+
+#frame {
+	background-color: var(--white);
+	border: 2vmin solid var(--black);
+	box-sizing: content-box;
+	box-shadow: 0 4vmin 8vmin -4vmin var(--black);
+	height: 80vmin;
+	padding: 4vmin;
+	position: relative;
+	width: 50vmin;
+}
+
+#canvas {
+	background: var(--black);
+	height: 80vmin;
+	display: grid;
+	overflow: hidden;
+	position: relative;
+	place-items: center;
+}
+#canvas:before {
+    background: var(--black); 
+    border-radius: 100%;
+    content:'';
+    height: 30vmin;
+    position: absolute;
+    width: 30vmin;
+    z-index: 10;
+    filter: blur(26px);
+}
+.sun {
+    background: var(--yellow);
+    box-shadow: 0 10vmin 0 0 var(--blue) inset;
+    border-radius: 100%;
+    display: grid;
+    place-items:center;
+    height: 30vmin;
+    position: relative;
+    width: 30vmin;
+    filter: blur(56px);
+}
+
+.blue:after {
+    background: var(--blue); 
+    border-radius: 100%;
+    content:'';
+    height: 15vmin;
+    position: absolute;
+    right: -5vmin;
+    top: -5vmin;
+    width: 15vmin;
+}
+.yellow:after {
+    background: var(--yellow); 
+    border-radius: 100%;
+    content:'';
+    height: 15vmin;
+    position: absolute;
+    left: -5vmin;
+    bottom: -5vmin;
+    width: 15vmin;
+}
+
+.yellow:before {
+    background: var(--yellow); 
+    border-radius: 100%;
+    content:'';
+    height: 5vmin;
+    position: absolute;
+    right: 5vmin;
+    bottom: 0vmin;
+    width: 5vmin;
+}
+@media screen and (max-width: 640px) { 
+    #canvas:before {
+        filter: blur(10px);
+    }
+}

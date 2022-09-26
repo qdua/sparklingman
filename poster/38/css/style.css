@@ -1,0 +1,167 @@
+:root {
+	--black: #000;
+	--dark: #121212;
+	--white: #fff;
+	--grey: #7d808a;
+	--yellow-darkest: #947e00;
+	--yellow-darker: #b89c00;
+	--yellow-dark: #dbba00;
+	--yellow: #ffd900;
+	--yellow-light: #ffde24;
+	--yellow-lighter: #ffe347;
+	--yellow-lightest: #ffe96b;
+	--yellow-lightest-50: #ffe96b50;
+	--blue-darkest: #00244d;
+	--blue-darker: #003571;
+	--blue-dark: #004594;
+	--blue: #0056b8;
+	--blue-light: #0067dc;
+	--blue-lighter: #0177ff;
+	--blue-lightest: #248aff;
+	--blue-lightest-50: #248aff50;
+}
+*,
+html,
+body {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+body {
+	background-color: var(--grey);
+	display: grid;
+	height: 100vh;
+	place-items: center;
+}
+
+#frame {
+	background-color: var(--white);
+	border: 2vmin solid var(--black);
+	box-sizing: content-box;
+	box-shadow: 0 4vmin 8vmin -4vmin var(--black);
+	height: 80vmin;
+	padding: 4vmin;
+	position: relative;
+	width: 50vmin;
+}
+
+#canvas {
+	background: var(--yellow);
+	height: 80vmin;
+	display: grid;
+	overflow: hidden;
+	position: relative;
+	place-items: end;
+}
+#canvas::before {
+	background: linear-gradient(
+		to bottom,
+		var(--blue-darker) 0%,
+		var(--blue-darker) 20%,
+		var(--blue-dark) 20%,
+		var(--blue-dark) 40%,
+		var(--blue) 40%,
+		var(--blue) 60%,
+		var(--blue-light) 60%,
+		var(--blue-light) 80%,
+		var(--blue-lighter) 80%,
+		var(--blue-lighter) 100%
+	);
+	content: "";
+	height: 40vmin;
+	width: 50vmin;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+main {
+	background: var(--yellow-darkest); 
+	display: flex;
+	justify-content: center;
+	height: 40vmin;
+	position: relative;
+	overflow: hidden;
+	width: 50vmin;
+}
+.persp {
+	position: absolute;
+	left: 0;
+	width: 50vmin;
+	perspective: 25vmin;
+}
+.persp-3d {
+	height: 40vmin;
+	transform-style: preserve-3d;
+	transform: rotateX(75deg);
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+.road {
+	background: var(--dark);
+	box-shadow: 0 0 0 1vmin var(--white), 0 0 0 2vmin var(--dark);
+	width: 22vmin;
+	height: 200vmin;
+	position: relative;
+	left: calc(50% - 11vmin);
+	top: -60vmin;
+}
+.road:before {
+	background-image: linear-gradient(var(--white) 70%, rgba(255, 255, 255, 0) 0%);
+	background-position: right;
+	background-size: 1.4vmin 7vmin;
+	background-repeat: repeat-y;
+	content: "";
+	height: 100vmin;
+	position: absolute;
+	left: calc(50% - 1vmin);
+	top: 0;
+	width: 2vmin;
+}
+.land {
+	height: 40vmin;
+	width: 50vmin;
+	margin: 0 auto;
+	position: relative;
+}
+.land::after {
+	background: var(--yellow-lightest);
+	box-shadow: 0 0 0 5vmin var(--yellow-darker) inset,
+    0 0 0 10vmin var(--yellow-dark) inset,
+    0 0 0 15vmin var(--yellow) inset,
+    0 0 0 20vmin var(--yellow-light) inset;
+	content: "";
+	height: 80vmin;
+	position: absolute;
+	left: -131vmin;
+	top: -250vmin;
+	width: 140vmin;
+}
+.land::before {
+	background: var(--yellow-lightest);
+	box-shadow: 0 0 0 5vmin var(--yellow-darker) inset,
+    0 0 0 10vmin var(--yellow-dark) inset,
+    0 0 0 15vmin var(--yellow) inset,
+    0 0 0 20vmin var(--yellow-light) inset;
+	content: "";
+	height: 80vmin;
+	position: absolute;
+	right: -131vmin;
+	top: -250vmin;
+	width: 140vmin;
+}
+.sun {
+	background: var(--yellow);
+	border-radius: 100%;
+	border: 0.4vmin solid var(--yellow-lightest);
+	box-shadow: 0 0 0 1vmin var(--yellow) inset, 0 0 0 1.4vmin var(--yellow-lightest) inset,
+		0 0 0 2.4vmin var(--yellow) inset, -10vmin 0 0 var(--yellow-lightest) inset,
+		0 0 0 4vmin var(--yellow-lightest-50), 0 0 0 8vmin var(--blue-lightest-50);
+	height: 40vmin;
+	width: 40vmin;
+	position: absolute;
+	top: calc(50% - 20vmin);
+	left: calc(50% - 20vmin);
+}
