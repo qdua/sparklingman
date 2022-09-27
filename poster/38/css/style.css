@@ -1,11 +1,15 @@
 :root {
 	--black: #000;
 	--dark: #121212;
+	--dark-50: #12121250;
 	--white: #fff;
+	--white-50: #ffffff20;
 	--grey: #7d808a;
+	--yellow-darkest-full: #2b2620;
 	--yellow-darkest: #947e00;
 	--yellow-darker: #b89c00;
 	--yellow-dark: #dbba00;
+	--yellow-dark-50: #dbba0020;
 	--yellow: #ffd900;
 	--yellow-light: #ffde24;
 	--yellow-lighter: #ffe347;
@@ -19,6 +23,11 @@
 	--blue-lighter: #0177ff;
 	--blue-lightest: #248aff;
 	--blue-lightest-50: #248aff50;
+	--red-darker: #9b1b14;
+	--red-dark: #ba2018;
+	--red: #da261c;
+	--red-light: #e53d35;
+	--red-lighter: #e95c54;
 }
 *,
 html,
@@ -74,14 +83,33 @@ body {
 	top: 0;
 	left: 0;
 }
+#frame:hover #canvas::before {
+	background: linear-gradient(
+		to bottom,
+		var(--red-darker) 0%,
+		var(--red-darker) 20%,
+		var(--red-dark) 20%,
+		var(--red-dark) 40%,
+		var(--red) 40%,
+		var(--red) 60%,
+		var(--red-light) 60%,
+		var(--red-light) 80%,
+		var(--red-lighter) 80%,
+		var(--red-lighter) 100%
+	);
+}
 main {
-	background: var(--yellow-darkest); 
+	background: var(--yellow-darkest);
 	display: flex;
 	justify-content: center;
 	height: 40vmin;
 	position: relative;
 	overflow: hidden;
+	transition: 0.3s ease-in-out;
 	width: 50vmin;
+}
+#frame:hover main {
+	background: var(--yellow-darkest-full);
 }
 .persp {
 	position: absolute;
@@ -107,6 +135,10 @@ main {
 	position: relative;
 	left: calc(50% - 11vmin);
 	top: -60vmin;
+	transition: 0.3s ease-in-out;
+}
+#frame:hover .road {
+	box-shadow: 0 0 0 1vmin var(--white-50), 0 0 0 2vmin var(--dark);
 }
 .road:before {
 	background-image: linear-gradient(var(--white) 70%, rgba(255, 255, 255, 0) 0%);
@@ -118,7 +150,54 @@ main {
 	position: absolute;
 	left: calc(50% - 1vmin);
 	top: 0;
+	transition: 0.3s ease-in-out;
 	width: 2vmin;
+}
+#frame:hover .road:before {
+	background-image: linear-gradient(
+		var(--white-50) 70%,
+		rgba(255, 255, 255, 0) 0%
+	);
+}
+.road:after {
+	background: radial-gradient(
+			transparent 0%,
+			var(--dark) 30%,
+			var(--dark) 0%,
+			transparent 40%
+		),
+		radial-gradient(
+			transparent 0%,
+			var(--black) 50%,
+			var(--black) 20%,
+			transparent 60%
+		),
+		radial-gradient(
+			circle at 25% 25%,
+			var(--black) 12%,
+			transparent 18%,
+			transparent 100%
+		),
+		radial-gradient(circle at 20% 80%, var(--dark) 2%, transparent 16%),
+		radial-gradient(circle at 80% 10%, var(--dark) 0%, transparent 6%),
+		radial-gradient(circle at 10% 50%, var(--black) 0%, transparent 8%),
+		radial-gradient(circle at 55% 35%, var(--black) 10%, transparent 28%);
+
+	background-size: 20vmin 20vmin;
+	content: "";
+	height: 250vmin;
+	width: 250vmin;
+	position: absolute;
+	top: 0;
+	left: -125vmin;
+	mix-blend-mode: difference;
+	opacity: 0;
+	z-index: 10;
+	transform: rotate(21deg);
+	transition: 0.3s ease-in-out;
+}
+#frame:hover .road:after {
+	opacity: 1;
 }
 .land {
 	height: 40vmin;
@@ -126,42 +205,61 @@ main {
 	margin: 0 auto;
 	position: relative;
 }
-.land::after {
+.land:after,
+.land:before {
+	background-size: 6em 6em;
 	background: var(--yellow-lightest);
 	box-shadow: 0 0 0 5vmin var(--yellow-darker) inset,
-    0 0 0 10vmin var(--yellow-dark) inset,
-    0 0 0 15vmin var(--yellow) inset,
-    0 0 0 20vmin var(--yellow-light) inset;
+		0 0 0 10vmin var(--yellow-dark) inset, 0 0 0 15vmin var(--yellow) inset,
+		0 0 0 20vmin var(--yellow-light) inset;
 	content: "";
 	height: 80vmin;
 	position: absolute;
-	left: -131vmin;
-	top: -250vmin;
+	transition: 0.3s ease-in-out;
 	width: 140vmin;
 }
+.land::after {
+	left: -131vmin;
+	top: -250vmin;
+}
 .land::before {
-	background: var(--yellow-lightest);
-	box-shadow: 0 0 0 5vmin var(--yellow-darker) inset,
-    0 0 0 10vmin var(--yellow-dark) inset,
-    0 0 0 15vmin var(--yellow) inset,
-    0 0 0 20vmin var(--yellow-light) inset;
-	content: "";
-	height: 80vmin;
-	position: absolute;
 	right: -131vmin;
 	top: -250vmin;
-	width: 140vmin;
+}
+#frame:hover .land:after,
+#frame:hover .land:before {
+	background: var(--dark-50);
+	box-shadow: 0 0 0 5vmin var(--dark-50) inset;
+	mix-blend-mode: overlay;
 }
 .sun {
 	background: var(--yellow);
 	border-radius: 100%;
 	border: 0.4vmin solid var(--yellow-lightest);
-	box-shadow: 0 0 0 1vmin var(--yellow) inset, 0 0 0 1.4vmin var(--yellow-lightest) inset,
-		0 0 0 2.4vmin var(--yellow) inset, -10vmin 0 0 var(--yellow-lightest) inset,
+	box-shadow: 0 0 0 1vmin var(--yellow) inset,
+		0 0 0 1.4vmin var(--yellow-lightest) inset, 0 0 0 2.4vmin var(--yellow) inset,
+		-10vmin 0 0 var(--yellow-lightest) inset,
 		0 0 0 4vmin var(--yellow-lightest-50), 0 0 0 8vmin var(--blue-lightest-50);
 	height: 40vmin;
 	width: 40vmin;
 	position: absolute;
 	top: calc(50% - 20vmin);
 	left: calc(50% - 20vmin);
+	transition: 0.3s ease-in-out;
+	transform: scale(1);
+}
+#frame:hover .sun {
+	background: var(--red);
+	border-radius: 100%;
+	border: 0.4vmin solid var(--red-lightest);
+	box-shadow: 0 0 0 1vmin var(--white-50) inset,
+		0 0 0 1.4vmin var(--white-50) inset, 0 0 0 2.4vmin var(--white-50) inset,
+		0 6vmin 0 var(--red-light) inset,
+		0 0 0 3vmin var(--red-lighter), 0 0 0 7vmin var(--white-50);
+	transform: scale(0.25);
+}
+s {
+	font: 2vmin/1 sans-serif;
+	text-decoration: none;
+	opacity: 0.75;
 }
